@@ -16,12 +16,11 @@
         });
         // Configuramos ascensores
         $.each(elevators,function(i,elevator){
-            elevator.destinos = new Array();
+
             elevator.on("idle", function(){
-              if (elevator.destinos.length > 0) {
-                console.log("con destinos");
-                console.log(elevator.getPressedFloors());
-                  elevator.goToFloor(elevator.destinos.pop());
+              if (elevator.getPressedFloors().length > 0) {
+                console.log("con destinos: " +elevator.getPressedFloors());
+                elevator.goToFloor(elevator.getPressedFloors()[0]);
               }
               else {
                 console.log("sin destinos");
@@ -45,10 +44,8 @@
             });
             elevator.on("floor_button_pressed", function(floorNum){
                 console.log("piden ir a " + floorNum);
-                elevator.destinos.push(floorNum);
             });
         });
-
     },
     update: function(dt, elevators, floors) {
         // We normally don't need to do anything here
