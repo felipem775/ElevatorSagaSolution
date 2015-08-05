@@ -24,7 +24,7 @@
                 else {
                   console.log("sin destinos");
                   if (quierenSubir.length > 0)elevator.goToFloor(quierenSubir[0]);
-                  else if if (quierenBajar.length > 0)elevator.goToFloor(quierenBajar[0]);
+                  else if (quierenBajar.length > 0)elevator.goToFloor(quierenBajar[0]);
                   else elevator.goToFloor(0);
                 }
               });
@@ -55,7 +55,6 @@
           });
           //*
           function arrayRemoveElement(elements,element) {
-
             var index = $.inArray(element,elements);
 
             if (index > -1) {
